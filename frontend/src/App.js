@@ -1,4 +1,5 @@
 import StampCollection from './components/StampCollection';
+import { useEffect, useState } from 'react';
 import './App.css';
 
 const stamps = [
@@ -23,6 +24,14 @@ const stamps = [
 ];
 
 function App() {
+  const [stamps, setStamps] = useState([]);
+
+  useEffect(() => {
+    fetch('http://localhost:3001/api/v1/stamps')
+      .then((response) => response.json())
+      .then((data) => setStamps(data));
+  }, []);
+
   return (
     <div className="App">
       <h1> My Stamps </h1>

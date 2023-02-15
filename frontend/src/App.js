@@ -1,23 +1,32 @@
-import logo from './logo.svg';
+import StampCollection from './components/StampCollection';
 import './App.css';
+
+const stamps = [
+  {
+    image: "https://via.placeholder.com/150",
+    name: "Stamp 1",
+    description: "This is stamp 1",
+    id: 1
+  },
+  {
+    image: "https://via.placeholder.com/150",
+    name: "Stamp 2",
+    description: "This is stamp 2",
+    id: 2
+  },
+  {
+    image: "https://via.placeholder.com/150",
+    name: "Stamp 3",
+    description: "This is stamp 3",
+    id: 3
+  }
+];
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1> My Stamps </h1>
+      <StampCollection stamps={stamps} />
     </div>
   );
 }
